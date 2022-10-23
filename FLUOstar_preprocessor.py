@@ -1,4 +1,3 @@
-# TODO: check if import sts could be optimized only importing used functions
 import re
 from tkinter import *
 from tkinter import filedialog as fd
@@ -475,6 +474,7 @@ while active_program:
     full_doc = drop_unused_wells(full_doc, wells_to_keep)
 
     # show plots for all conditions using all wells
+    print("Color order for replicates: blue - yellow - green - red")
     create_first_plots()
     plt.show()
 
