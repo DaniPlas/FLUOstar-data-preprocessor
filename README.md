@@ -22,6 +22,7 @@ To get them:
 4. Click on "Excel report"
   4.1 Mark "Transpose tables"
 5. Save the file
+NOTE: make sure that the time is in hours!
 
 > This script was written in Python, using Pandas and tkinter modules, so you'll need them to run it. 
 > A compiled file will be made available to run this script as an executable file without needing to install anything else.
