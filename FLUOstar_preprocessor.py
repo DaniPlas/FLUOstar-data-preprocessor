@@ -316,7 +316,7 @@ def change_column_names(df):
 
 
 def averages_df_gen(df):
-    averages_df = df.groupby(level=0, axis=1).mean()
+    averages_df = df.groupby(level=0, axis=1, sort=False).mean()
     return averages_df
 
 
@@ -324,7 +324,7 @@ def averages_df_gen(df):
 
 
 def stdev_df_gen(df):
-    stdev_df = df.groupby(level=0, axis=1).std()
+    stdev_df = df.groupby(level=0, axis=1, sort=False).std()
 
     return stdev_df
 
@@ -418,8 +418,6 @@ def normalization(df):
 
     min_time = min(lower_times)
     max_time = max(highest_times)
-    #min_index = df.loc[df['Time'] == min_time].index[0]
-    #max_index = df.loc[df['Time'] == max_time].index[0]
 
     min_index = df["Time"].sub(min_time).abs().lt(0.06).idxmax()
     max_index = df["Time"].sub(max_time).abs().lt(0.06).idxmax()
